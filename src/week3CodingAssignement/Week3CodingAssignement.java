@@ -1,6 +1,7 @@
 package week3CodingAssignement;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class Week3CodingAssignement {
 
@@ -48,6 +49,12 @@ public class Week3CodingAssignement {
 		
 		//5.)
 		//int array called nameLengths
+		int [] nameLengths =new int[6];
+		
+		for (int i=0; i<names.length; i++) {
+			nameLengths[i] = names[i].length();
+		}
+		System.out.println("Namelengths for each element: " + Arrays.toString(nameLengths));
 		
 		//6.)
 		//loop to calculate the sum of all the elements in the array .
@@ -59,6 +66,7 @@ public class Week3CodingAssignement {
 		
 		//7.)
 		//Write a method that takes a String, word, and an int, n, as arguments and returns the word concatenated to itself n number of times. (i.e. if I pass in “Hello” and 3, I would expect the method to return “HelloHelloHello”).
+		System.out.println(wordMultiplier ("Hello"+ " ",3));
 		
 		//8.)
 		//Write a method that takes two Strings, firstName and lastName, and returns a full name (the full name should be the first and the last name as a String separated by a space).
@@ -80,11 +88,16 @@ public class Week3CodingAssignement {
 		
 		//11.)
 		//Write a method that takes two arrays of double and returns true if the average of the elements in the first array is greater than the average of the elements in the second array.
+		double[] numbersA = {2, 4, 6};
+		double[] numbersB = {6, 8, 10};
+		System.out.println(averageOfMyArrays(numbersA, numbersB));
 		
 		
 		//12.)
 		//Write a method called willBuyDrink that takes a boolean isHotOutside, and a double moneyInPocket, and returns true if it is hot outside and if moneyInPocket is greater than 10.50.
-		
+		  boolean isHotOutside = true; 
+		  double moneyInPocket = 5.0; 
+		  System.out.println(willBuyDrink(isHotOutside, moneyInPocket));
 		
 		
 		//13.)
@@ -93,7 +106,18 @@ public class Week3CodingAssignement {
 		System.out.println(isPalindrome("mom"));
 
 	  }
-	//All methods for associated number 
+	
+	  //All methods for associated number
+	  
+	  //7.)
+	  public static String wordMultiplier(String word, int number) {
+		  String name = "";
+		  for (int i= 0; i < number; i++) {
+			  name += word;
+		  }
+		  return "Name with spaces: "+ name;
+	  }
+	
 	
       //8.)
 	  public static String name(String fullName) {
@@ -115,8 +139,31 @@ public class Week3CodingAssignement {
 		  return sum / arrays.length;
 	  }
 	  //11.)
+	 
+	  public static boolean averageOfMyArrays (double[] numbersA, double[] numbersB) {
+		 double sumA = 0; 
+		 double sumB = 0;
+		 for (double set1 : numbersA) {
+			 sumA += set1;
+		 }
+		 for (double set2 : numbersB) {
+			 sumB += set2;
+		 }
+		 if ((sumA/ numbersA.length) > (sumB/numbersB.length)) {
+			 System.out.println();
+			 return true;
+		 }
+		 return false;
+	  }
+	 
 	  
 	  //12.)
+	  public static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
+		  if(isHotOutside && moneyInPocket > 10.50) {
+		  }
+		return true;
+	  }
+	  
 	  
 	  //13.)
 	  public static boolean isPalindrome(String string) {
